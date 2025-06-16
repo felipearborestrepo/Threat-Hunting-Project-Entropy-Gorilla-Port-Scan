@@ -54,7 +54,7 @@ Queried the following tables in MDE Advanced Hunting:
 | where ActionType == "ConnectionFailed"
 | summarize count() by DeviceName, ActionType, LocalIP
 | order by count_
-
+```
 ![Screenshot 2025-06-15 231048](https://github.com/user-attachments/assets/7e487c1b-0ee1-4e7d-abc6-8632f51eaff2)
 
 ### 3. Data Analysis
