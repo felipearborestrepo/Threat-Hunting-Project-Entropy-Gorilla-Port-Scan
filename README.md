@@ -1,4 +1,4 @@
-# 🛡️ Threat Hunting Project: Entropy Gorilla Port Scan
+# 🛡️ Threat Hunting Sudden Network Slowdowns(Simulated)
 
 ## 📁 Overview
 This project documents the investigation, analysis, and response to an internal network scanning incident using Microsoft Defender for Endpoint (MDE), Azure, and PowerShell. The port scan was traced to a script executed on a Windows VM named `labuser`, using the SYSTEM account.
