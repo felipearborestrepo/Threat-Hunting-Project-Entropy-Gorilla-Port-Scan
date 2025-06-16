@@ -100,7 +100,7 @@ Steps taken:
 
 ### 6. Documentation
 **Documented all processes for the threat hunting scenario in this pdf file:
-![Documentation Notes](file:///C:/Users/arbof/Downloads/FelipeCopy%20of%20Scenario%202_%20Sudden%20Network%20Slowdowns.pdf)
+[Documented Notes](file:///C:/Users/arbof/Downloads/FelipeCopy%20of%20Scenario%202_%20Sudden%20Network%20Slowdowns.pdf)
 
 ### 7. Improvement
 - 🔐 Hardened PowerShell logging.
