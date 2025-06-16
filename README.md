@@ -48,6 +48,7 @@ What the Malicious Script Does:
 
 ### 2. Data Collection
 Queried the following tables in MDE Advanced Hunting:
+```kql
 - `DeviceNetworkEvents`
 | where DeviceName == "labuser"
 | where ActionType == "ConnectionFailed"
